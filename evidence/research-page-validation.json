@@ -1,0 +1,16 @@
+{
+  "validatedAt": "2026-10-15T17:05:37.750335+00:00",
+  "kind": "static-presentation-browser-qa",
+  "sourceRows": 6,
+  "filters": [
+    3,
+    2,
+    1
+  ],
+  "desktop": true,
+  "mobileWidth": 390,
+  "pageErrors": [],
+  "researchApiCalls": 0,
+  "modelCalls": 0,
+  "note": "页面用于研究方案审阅，不执行论文搜索，不代表模型或源选择已确认。"
+}
