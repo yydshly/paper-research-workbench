@@ -1,0 +1,19 @@
+{
+  "checkedDate": "2026-10-15",
+  "repository": "yydshly/paper-research-workbench",
+  "visibility": "public",
+  "url": "https://yydshly.github.io/paper-research-workbench/",
+  "pagesSource": { "branch": "main", "path": "/docs" },
+  "httpsEnforced": true,
+  "firstBuildStatus": "built",
+  "firstBuiltCommit": "2045bbecf7f7a289ee73b3e7bb7220b512017770",
+  "firstBuildUpdatedAt": "2026-10-15T17:45:14Z",
+  "retainedPreviousMain": "146e83c49cb7f6de66ad41babc7923b53c46cc71",
+  "historyRewritten": false,
+  "forcePushed": false,
+  "newRepositoryCreated": false,
+  "paidServiceCreated": false,
+  "newCredentialCreated": false,
+  "scope": "Static research brief. Research APIs remain local. No model is connected and real model calls are zero.",
+  "latestDeploymentEvidence": "Compare GitHub Pages builds/latest commit to current main; verify live resources against that commit. Local final check is in .cache/pages-deployment.json."
+}

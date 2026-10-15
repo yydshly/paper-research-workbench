@@ -2,6 +2,8 @@
 
 当前仓库为 **public**，用户选择公开现有仓库并保留现有提交历史。没有新建仓库、重写历史、强推、付费或创建新凭据。
 
+线上入口：<https://yydshly.github.io/paper-research-workbench/>。Pages 已启用、HTTPS enforced，首次构建于 2026-10-15 17:45 UTC 达到 `built`。最新部署提交以 Pages builds API 与最终核验回执为准。
+
 Pages 只发布 `main:/docs`：研究、需求、数据源获取方式、检索策略和费用/许可边界。应用源码可在公开仓库查看，但 Python API 不在 Pages 上运行；真实模型调用为 0。
 
 ## 发布文件
