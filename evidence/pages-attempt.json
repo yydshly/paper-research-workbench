@@ -1,0 +1,18 @@
+{
+  "checkedDate": "2026-10-15",
+  "repository": "yydshly/paper-research-workbench",
+  "visibility": "private",
+  "source": { "branch": "main", "path": "/docs" },
+  "method": "POST /repos/yydshly/paper-research-workbench/pages",
+  "status": 422,
+  "message": "Your current plan does not support GitHub Pages for this repository.",
+  "documentationUrl": "https://docs.github.com/rest/pages/pages#create-a-github-pages-site",
+  "deployed": false,
+  "deploymentSha": null,
+  "liveUrl": null,
+  "visibilityChanged": false,
+  "paidUpgrade": false,
+  "newCredentialCreated": false,
+  "publicDisplayRepositoryCreated": false,
+  "minimumAlternative": "After explicit approval, create a separate public repository containing only reviewed static research presentation files; preserve private application repository."
+}

@@ -14,7 +14,9 @@
 
 2026-10-15：仓库为 private，`has_pages=false`；读取 Pages 返回 404（尚未启用）。`GET /user` 未返回 plan 字段，因此不能把 null 当成 Free 套餐。
 
-[GitHub 官方说明](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)列明：Free 支持公开库 Pages；私有库 Pages 需 Pro/Team/Enterprise 等支持。现有用户授权公开非敏感研究页，因此在内容检查、推送后可做一次 Pages 创建检查；不升级套餐、不改库可见性、不创建新 key。结果待记录。
+[GitHub 官方说明](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)列明：Free 支持公开库 Pages；私有库 Pages 需 Pro/Team/Enterprise 等支持。现有用户授权公开非敏感研究页，因此在内容检查、推送后做了一次 Pages 创建检查；未升级套餐、未改库可见性、未创建新 key。
+
+**实际结果：HTTP 422**，GitHub 返回 `Your current plan does not support GitHub Pages for this repository.`。这是平台套餐阻塞，不是自动审批拒绝。未成功创建 Pages，没有线上 URL 或部署 SHA；不能把推测的 github.io 路径报告为已上线。
 
 ```powershell
 gh api --method POST repos/yydshly/paper-research-workbench/pages --input deploy/pages-source.json
