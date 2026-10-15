@@ -23,7 +23,7 @@ class Workbench:
         return {"name": "Paper Research Workbench", "version": "0.1.0", "revision": self.revision,
                 "phase": "真实数据纵向切片", "model": {"status": "not_connected", "realCalls": 0},
                 "provider": "Europe PMC", "rateLimit": "本项目自限速 1 请求/秒；有限重试；15 分钟内存缓存",
-                "networkCalls": self.adapter.network_calls, "hosting": "local_only", "repositoryVisibility": "private"}
+                "networkCalls": self.adapter.network_calls, "hosting": "local_only", "repositoryVisibility": "public"}
 
     def search(self, query, count=75):
         if not isinstance(query, str) or not query.strip() or len(query) > 500:

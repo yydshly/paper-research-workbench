@@ -14,7 +14,7 @@
   <a class="skip" href="#main">跳到主内容</a>
   <aside class="sidebar">
     <a class="brand" href="/" aria-label="研读工作台首页"><span class="brand-mark">研</span><span>研读<span class="brand-sub">PAPER WORKBENCH</span></span></a>
-    <div class="workspace-label">独立科研工作区 <span class="tiny-tag">PRIVATE</span></div>
+    <div class="workspace-label">独立科研工作区 <span class="tiny-tag">PUBLIC</span></div>
     <nav class="main-nav" aria-label="主导航">
       <button data-view="workspace" class="active"><span aria-hidden="true">⌕</span> 文献检索</button>
       <button data-view="reader"><span aria-hidden="true">▤</span> 开放阅读 <span id="nav-count" class="nav-count">0</span></button>
@@ -52,14 +52,14 @@
       <section id="project-view" class="view" hidden>
         <span class="eyebrow">THE PRODUCT</span><h1 class="compact-title">项目与目标</h1><p class="lead">查询能力与读懂能力是主线。相近研究和后续采用，是下一步需要积累的证据。</p>
         <div class="goal-grid"><article class="goal-card"><span>01 / 已开发</span><h2>查询有理由</h2><p>真实 Europe PMC 候选、标识符去重、可展开的词项排序依据。</p></article><article class="goal-card"><span>02 / 数据可读 · 模型待接入</span><h2>阅读能回溯</h2><p>开放原文、章节段落和图注定位；双语、方法与图解保留真实模型接口。</p></article><article class="goal-card"><span>03 / 后续阶段</span><h2>核查有边界</h2><p>区分相近研究、引用、提及与实际采用，不保证原创性。</p></article></div>
-        <div class="section-heading"><h2>需求与开发档案</h2><a href="https://github.com/yydshly/paper-research-workbench" target="_blank" rel="noopener noreferrer">查看私有 GitHub 仓库 ↗</a></div>
+        <div class="section-heading"><h2>需求与开发档案</h2><a href="https://github.com/yydshly/paper-research-workbench" target="_blank" rel="noopener noreferrer">查看 GitHub 源码仓库 ↗</a></div>
         <div class="docs-layout"><nav id="doc-nav" aria-label="项目文档"></nav><article class="document"><h2 id="doc-title">产品需求</h2><pre id="doc-content" aria-live="polite">正在读取文档…</pre></article></div>
       </section>
 
       <section id="status-view" class="view" hidden>
         <span class="eyebrow">HONEST BY DEFAULT</span><h1 class="compact-title">当前状态与验收</h1><p class="lead">区分真实数据、模拟测试和真实模型。每一个阶段都留下可检查的记录。</p>
         <div id="runtime-status" class="runtime-card" role="status">正在读取服务状态…</div>
-        <div class="goal-grid"><article class="goal-card"><span>可运行</span><h2>真实数据流程</h2><p>检索 → 去重 → 前 20 篇评分 → 许可核查 → 开放正文/图注。</p></article><article class="goal-card pending"><span>未接入</span><h2>双语与解释</h2><p>没有调用真实模型。术语、方法、翻译和图解暂不可用。</p></article><article class="goal-card pending"><span>未部署</span><h2>私有网页托管</h2><p>当前为本机入口与私有源码。未创建新凭据、公开站点或付费服务。</p></article></div>
+        <div class="goal-grid"><article class="goal-card"><span>可运行</span><h2>真实数据流程</h2><p>检索 → 去重 → 前 20 篇评分 → 许可核查 → 开放正文/图注。</p></article><article class="goal-card pending"><span>未接入</span><h2>双语与解释</h2><p>没有调用真实模型。术语、方法、翻译和图解暂不可用。</p></article><article class="goal-card"><span>研究页 / 本机原型</span><h2>公开研究档案</h2><p>源码现已公开，Pages 用于研究展示；此原型 API 仍在本机。没有付费或新凭据。</p></article></div>
         <div class="boundary-note"><h2>证据不能替代判断</h2><p>相关度是启发式词项分，不是正确率或质量分。引用不等于实际采用，相似度不能保证原创。覆盖范围限于本次 Europe PMC 候选。</p></div>
         <button id="show-acceptance" type="button" class="secondary">阅读完整验收标准 →</button>
       </section>

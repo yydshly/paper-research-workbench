@@ -181,7 +181,7 @@ async function loadDoc(name) {
 for (const [id, title] of Object.entries(docs)) { const b = button(title, () => loadDoc(id), ''); b.dataset.doc = id; $('#doc-nav').append(b); }
 $('#show-acceptance').addEventListener('click', () => { showView('project'); loadDoc('acceptance'); });
 async function loadStatus() {
-  try { const status = await api('/api/status'); const root = $('#runtime-status'); root.replaceChildren(); root.append(el('strong', `${status.name} · v${status.version}`), el('div', `当前阶段：${status.phase}`), el('div', '模型状态：未接入 · 真实模型调用 0 次'), el('div', `数据源：${status.provider} · 本进程上游请求 ${status.networkCalls} 次`), el('div', status.rateLimit), el('div', `源码版本：${status.revision}`), el('div', '服务范围：127.0.0.1 本机 · GitHub 仓库私有'));
+  try { const status = await api('/api/status'); const root = $('#runtime-status'); root.replaceChildren(); root.append(el('strong', `${status.name} · v${status.version}`), el('div', `当前阶段：${status.phase}`), el('div', '模型状态：未接入 · 真实模型调用 0 次'), el('div', `数据源：${status.provider} · 本进程上游请求 ${status.networkCalls} 次`), el('div', status.rateLimit), el('div', `源码版本：${status.revision}`), el('div', '服务范围：127.0.0.1 本机 · GitHub 仓库公开'));
   } catch (error) { $('#runtime-status').textContent = error.message; }
 }
 $('#export-evidence').addEventListener('click', () => {

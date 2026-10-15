@@ -1,31 +1,33 @@
 # GitHub Pages 研究展示
 
-只发布 `main` 的 `/docs` 目录，包含非敏感研究、需求与来源方案；不发布应用源码或用户数据，不将静态托管误称为在线研究 API。
+当前仓库为 **public**，用户选择公开现有仓库并保留现有提交历史。没有新建仓库、重写历史、强推、付费或创建新凭据。
 
-## 已准备
+Pages 只发布 `main:/docs`：研究、需求、数据源获取方式、检索策略和费用/许可边界。应用源码可在公开仓库查看，但 Python API 不在 Pages 上运行；真实模型调用为 0。
 
-- `docs/index.html` / `site.css` / `site.js`：无需构建、无需外部依赖的研究展示。
-- `docs/.nojekyll`：静态直出。
+## 发布文件
+
+- `docs/index.html` / `site.css` / `site.js`：研究档案，版本 `research-2026-10-15-r2`。
+- `docs/.nojekyll`：静态直出，无额外依赖或构建工具。
 - `deploy/pages-source.json`：`build_type=legacy`，`main:/docs`。
-- `scripts/preview_research.ps1`：本机 8766 预览。
-- `scripts/validate_research_page.py`：六来源、过滤器、详情、桌面/390px、无后台 API/模型调用的浏览器检查。
+- `scripts/preview_research.ps1`：本机预览。
+- `scripts/validate_research_page.py`：来源表、过滤器、详情与响应式检查。
 
-## 资格检查
+## 可见性与历史
 
-2026-10-15：仓库为 private，`has_pages=false`；读取 Pages 返回 404（尚未启用）。`GET /user` 未返回 plan 字段，因此不能把 null 当成 Free 套餐。
+2026-10-15 已实际核实 `private=false` / `visibility=public`，用户可能已自行完成修改，因此没有重复修改。原有 4 次提交保留，原型工程提交仍为 `f103371`。
 
-[GitHub 官方说明](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)列明：Free 支持公开库 Pages；私有库 Pages 需 Pro/Team/Enterprise 等支持。现有用户授权公开非敏感研究页，因此在内容检查、推送后做了一次 Pages 创建检查；未升级套餐、未改库可见性、未创建新 key。
+此前私有库启用 Pages 返回 HTTP 422（当前套餐不支持），该结果保留在 `evidence/pages-attempt.json`，属于历史状态，不代表公开库仍受阻。
 
-**实际结果：HTTP 422**，GitHub 返回 `Your current plan does not support GitHub Pages for this repository.`。这是平台套餐阻塞，不是自动审批拒绝。未成功创建 Pages，没有线上 URL 或部署 SHA；不能把推测的 github.io 路径报告为已上线。
+## 部署与核验
 
 ```powershell
 gh api --method POST repos/yydshly/paper-research-workbench/pages --input deploy/pages-source.json
+gh api repos/yydshly/paper-research-workbench/pages
+gh api repos/yydshly/paper-research-workbench/pages/builds/latest
 ```
 
-此命令仅在当前授权与资格仍适用时执行；若返回套餐限制，不反复重试。
+仅在尚未启用时创建。网络中断或 EOF 属于不确定响应，先读取当前状态，再决定是否重试；不盲目重复创建。
 
-## 若当前私有库不支持
+核验部署终态 `built`、部署 commit 与远端 main 相同，实际 HTTPS 访问首页/CSS/JS 并与源码哈希比较，再检查桌面、390px 窄屏、导航、6项来源表、过滤器及主要官方外链。最终 API 与浏览器核验回执保存于本地 `.cache`，同时 GitHub Pages builds API 保留部署记录；避免为了把提交 SHA 写进同一提交造成自引用。
 
-免费最小替代：另建一个仅含研究展示文件的公开仓库（建议 `paper-research-workbench-research`），主应用库继续私有。公开展示库将包含 `index.html`、`site.css`、`site.js`、`.nojekyll` 和说明，不复制应用、证据原始响应或任何密钥。**尚未获新建公开库授权，先报告具体错误，由父线程询问用户。**
-
-没有成功部署就不提供推测 URL 当成可打开入口。若获准另建展示库，还需核实部署 commit SHA、Pages build 状态和真实 HTTP/浏览器入口。
+本页只展示研究方案，不执行论文检索，不代表模型解读、科研质量评测或方向查新已经完成。后续仍需用户确认数据源和公开样例后再推进功能。
