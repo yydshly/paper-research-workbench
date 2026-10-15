@@ -1,0 +1,73 @@
+{
+  "validatedAt": "2026-10-15T16:54:58.262704+00:00",
+  "kind": "real-network",
+  "query": "(DESeq2 OR \"RNA-seq\") AND \"differential expression\"",
+  "search": {
+    "requested": 75,
+    "totalHits": 150487,
+    "retrieved": 75,
+    "unique": 75,
+    "duplicatesRemoved": 0,
+    "shown": 20,
+    "source": {
+      "provider": "Europe PMC",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28DESeq2+OR+%22RNA-seq%22%29+AND+%22differential+expression%22&format=json&resultType=core&pageSize=75",
+      "fetchedAt": "2026-10-15T16:54:39.060938+00:00",
+      "sha256": "13a6c27791d85d8e6b5e9e1ef012394ad509984e557dfaa82a26df5779c9ff2e",
+      "cacheHit": false,
+      "hashAlgorithm": "SHA-256",
+      "apiVersion": "6.9"
+    }
+  },
+  "repeatRequest": {
+    "cacheHit": true,
+    "additionalNetworkCalls": 0
+  },
+  "article": {
+    "pmcid": "PMC4302049",
+    "doi": "10.1186/s13059-014-0550-8",
+    "license": {
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0",
+      "statement": "This is an Open Access article distributed under the terms of the Creative Commons Attribution License (http://creativecommons.org/licenses/by/4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly credited. The Creative Commons Public Domain Dedication waiver (http://creativecommons.org/publicdomain/zero/1.0/) applies to the data made available in this article, unless otherwise stated.",
+      "scope": "article",
+      "processingAllowed": true
+    },
+    "source": {
+      "provider": "Europe PMC",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4302049/fullTextXML",
+      "fetchedAt": "2026-10-15T16:54:50.838889+00:00",
+      "sha256": "f58d746de6bb7a446de7c5a49a0bf48861258ffe7ea8f25f7f8d31efaaf90dcf",
+      "cacheHit": false,
+      "hashAlgorithm": "SHA-256",
+      "apiVersion": "6.9"
+    },
+    "sections": 37,
+    "paragraphs": 141,
+    "figures": 9,
+    "anchors": 141
+  },
+  "empty": {
+    "totalHits": 0,
+    "source": {
+      "provider": "Europe PMC",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A99999999999999999999&format=json&resultType=core&pageSize=50",
+      "fetchedAt": "2026-10-15T16:54:53.930313+00:00",
+      "sha256": "67d260dea8976246231ff8dddd9853788423d962388f9453d71412c11e5eb951",
+      "cacheHit": false,
+      "hashAlgorithm": "SHA-256",
+      "apiVersion": "6.9"
+    }
+  },
+  "missingFulltext": "FULLTEXT_UNAVAILABLE",
+  "model": {
+    "status": "not_connected",
+    "realCalls": 0
+  },
+  "networkCalls": 5,
+  "limitations": [
+    "上游错误与许可未知分支另由模拟测试覆盖",
+    "本验收不构成模型科学质量评估",
+    "动态数据后续可变化"
+  ]
+}

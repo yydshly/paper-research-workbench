@@ -1,0 +1,42 @@
+{
+  "validatedAt": "2026-10-15T16:58:06.419247+00:00",
+  "browser": "installed Edge / Playwright headless",
+  "checks": [
+    {
+      "kind": "real-network",
+      "name": "75-candidate search and duplicate submit suppression",
+      "passed": true
+    },
+    {
+      "kind": "real-network-ui",
+      "name": "selection basket and maximum 3",
+      "eligibleTop20": 7,
+      "selected": 3,
+      "passed": true
+    },
+    {
+      "kind": "real-network",
+      "name": "open article, paragraphs, figures and absent model",
+      "paragraphs": 141,
+      "passed": true
+    },
+    {
+      "kind": "real-network",
+      "name": "empty result without canned fallback",
+      "passed": true
+    },
+    {
+      "kind": "simulated-browser-responses",
+      "name": "upstream error, unknown license, missing fulltext",
+      "passed": true
+    },
+    {
+      "kind": "browser-layout",
+      "name": "390px mobile search and reader no horizontal overflow",
+      "passed": true
+    }
+  ],
+  "pageErrors": [],
+  "realModelCalls": 0,
+  "note": "内置 CUA 浏览器启动失败两次；未安装新浏览器，使用现有本机工具。"
+}

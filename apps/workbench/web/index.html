@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="从真实文献检索到可追溯的开放全文阅读。独立论文研究工作台。">
+  <title>研读 · 论文研究工作台</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳到主内容</a>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="研读工作台首页"><span class="brand-mark">研</span><span>研读<span class="brand-sub">PAPER WORKBENCH</span></span></a>
+    <div class="workspace-label">独立科研工作区 <span class="tiny-tag">PRIVATE</span></div>
+    <nav class="main-nav" aria-label="主导航">
+      <button data-view="workspace" class="active"><span aria-hidden="true">⌕</span> 文献检索</button>
+      <button data-view="reader"><span aria-hidden="true">▤</span> 开放阅读 <span id="nav-count" class="nav-count">0</span></button>
+      <button data-view="project"><span aria-hidden="true">◇</span> 项目与目标</button>
+      <button data-view="status"><span aria-hidden="true">◷</span> 状态与验收</button>
+    </nav>
+    <div class="sidebar-note"><span class="eyebrow">当前主线 / 01</span><strong>找得到，追得回</strong><p>真实检索 → 有依据地筛选<br>→ 回到开放原文</p><div class="progress-track"><span></span></div><small>读懂与查新逐步接入</small></div>
+    <div class="sidebar-footer"><span class="status-dot"></span> Europe PMC 数据源<small>研究决策由人完成</small></div>
+  </aside>
+
+  <div class="shell">
+    <header class="topbar"><span>研究工作台 <span class="slash">/</span> <span id="view-label">文献检索</span></span><span class="stage"><span class="status-dot"></span> 阶段 01 · 真实数据</span></header>
+    <main id="main" tabindex="-1">
+      <section id="workspace-view" class="view">
+        <div class="page-intro"><div><span class="eyebrow">DISCOVER WITH EVIDENCE</span><h1>从一个问题，<br>找到值得细读的论文<span class="accent">。</span></h1><p>把检索理由、来源和开放原文放在一起，让下一步有据可循。</p></div><div class="intro-note"><span>01</span><strong>查询 → 筛选 → 阅读</strong><small>生命科学文献 · Europe PMC</small></div></div>
+        <form id="search-form" class="search-panel">
+          <div class="panel-heading"><label for="query">你的研究问题或查询式</label><button id="example-fill" type="button" class="text-button">填入 DESeq2 公开示例 ↗</button></div>
+          <textarea id="query" name="query" rows="2" maxlength="500" required placeholder='例如：(DESeq2 OR "RNA-seq") AND "differential expression"' aria-describedby="query-help"></textarea>
+          <div class="search-bottom"><p id="query-help">查询会发送至 Europe PMC。使用可公开的英文关键词或查询式；中文自动扩展尚未接入。</p><div class="search-controls"><label for="count">候选</label><select id="count" name="count"><option value="50">50 篇</option><option value="75" selected>75 篇</option><option value="100">100 篇</option></select><button id="search-button" type="submit" class="primary">检索文献 <span aria-hidden="true">↗</span></button></div></div>
+        </form>
+        <div class="example-strip"><span class="mini-icon">D</span><div><strong>先试一篇开放论文</strong><span>DESeq2 · Genome Biology · 2014 · CC BY 4.0</span></div><button id="open-example" class="text-button" type="button">打开原文阅读 →</button></div>
+        <p class="disclaimer">这是公开教学案例，不是私人研究课题。词项相关度不是正确率；本阶段未接入真实模型。</p>
+        <div class="workspace-grid">
+          <section aria-labelledby="results-title"><div class="section-heading"><div><span class="eyebrow">LITERATURE</span><h2 id="results-title">候选文献 <span id="results-count" class="muted"></span></h2></div><button id="export-evidence" type="button" class="secondary" disabled>导出来源记录</button></div><div id="search-status" class="feedback" role="status" aria-live="polite"></div><div id="results"><div class="empty-state"><div class="empty-symbol" aria-hidden="true">⌕</div><h3>从具体问题开始</h3><p>实时检索 50–100 条候选，去重后展示前 20 篇，<br>每一篇都能查看相关度的词项依据。</p><span class="soft-tag">真实 API · 不预置检索结果</span></div></div></section>
+          <aside class="basket-panel" aria-labelledby="basket-title"><div class="section-heading"><h2 id="basket-title">阅读篮 <span id="basket-count">0 / 3</span></h2></div><p class="muted small">选择 1–3 篇。全文打开前会再次核查许可。</p><div id="basket"></div><div class="evidence-note"><span class="eyebrow">保持证据完整</span><p>来源链接、采集时间、许可与哈希随文保留。</p><p>许可未知、NC / ND 等文章暂不进入阅读加工。</p></div></aside>
+        </div>
+      </section>
+
+      <section id="reader-view" class="view" hidden>
+        <div class="section-heading"><div><span class="eyebrow">READ THE SOURCE</span><h1 class="compact-title">开放全文阅读</h1></div><button data-view="workspace" class="secondary">返回检索</button></div>
+        <div id="reader-status" class="feedback" role="status" aria-live="polite"></div>
+        <div id="reader-content"><div class="empty-state"><div class="empty-symbol">▤</div><h2>让理解从原文开始</h2><p>在文献检索中选择开放论文，或直接打开教学案例。</p><button id="reader-example" type="button" class="primary">阅读 DESeq2 公开原文</button></div></div>
+      </section>
+
+      <section id="project-view" class="view" hidden>
+        <span class="eyebrow">THE PRODUCT</span><h1 class="compact-title">项目与目标</h1><p class="lead">查询能力与读懂能力是主线。相近研究和后续采用，是下一步需要积累的证据。</p>
+        <div class="goal-grid"><article class="goal-card"><span>01 / 已开发</span><h2>查询有理由</h2><p>真实 Europe PMC 候选、标识符去重、可展开的词项排序依据。</p></article><article class="goal-card"><span>02 / 数据可读 · 模型待接入</span><h2>阅读能回溯</h2><p>开放原文、章节段落和图注定位；双语、方法与图解保留真实模型接口。</p></article><article class="goal-card"><span>03 / 后续阶段</span><h2>核查有边界</h2><p>区分相近研究、引用、提及与实际采用，不保证原创性。</p></article></div>
+        <div class="section-heading"><h2>需求与开发档案</h2><a href="https://github.com/yydshly/paper-research-workbench" target="_blank" rel="noopener noreferrer">查看私有 GitHub 仓库 ↗</a></div>
+        <div class="docs-layout"><nav id="doc-nav" aria-label="项目文档"></nav><article class="document"><h2 id="doc-title">产品需求</h2><pre id="doc-content" aria-live="polite">正在读取文档…</pre></article></div>
+      </section>
+
+      <section id="status-view" class="view" hidden>
+        <span class="eyebrow">HONEST BY DEFAULT</span><h1 class="compact-title">当前状态与验收</h1><p class="lead">区分真实数据、模拟测试和真实模型。每一个阶段都留下可检查的记录。</p>
+        <div id="runtime-status" class="runtime-card" role="status">正在读取服务状态…</div>
+        <div class="goal-grid"><article class="goal-card"><span>可运行</span><h2>真实数据流程</h2><p>检索 → 去重 → 前 20 篇评分 → 许可核查 → 开放正文/图注。</p></article><article class="goal-card pending"><span>未接入</span><h2>双语与解释</h2><p>没有调用真实模型。术语、方法、翻译和图解暂不可用。</p></article><article class="goal-card pending"><span>未部署</span><h2>私有网页托管</h2><p>当前为本机入口与私有源码。未创建新凭据、公开站点或付费服务。</p></article></div>
+        <div class="boundary-note"><h2>证据不能替代判断</h2><p>相关度是启发式词项分，不是正确率或质量分。引用不等于实际采用，相似度不能保证原创。覆盖范围限于本次 Europe PMC 候选。</p></div>
+        <button id="show-acceptance" type="button" class="secondary">阅读完整验收标准 →</button>
+      </section>
+    </main>
+    <footer class="footer"><span>研读 · Paper Research Workbench</span><span>可追溯的来源，谨慎的结论。</span></footer>
+  </div>
+</body>
+</html>

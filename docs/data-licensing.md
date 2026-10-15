@@ -3,13 +3,16 @@
 ## 数据来源与访问
 
 - 官方 API 文档：<https://europepmc.org/RestfulWebService>
+- 同一站点可读取的开发文档：<https://dev.europepmc.org/RestfulWebService>
 - 官方版权说明：<https://dev.europepmc.org/Copyright>
 - 实际访问 API：<https://www.ebi.ac.uk/europepmc/webservices/rest/>
 - 示例全文：<https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4302049/fullTextXML>
 
-2026-10-15 核查：版权页面明确区分可访问与可再利用，自动全文获取应使用其 REST/OAI/批量等指定服务，并逐篇遵循许可。API 文档网页在本环境遇到 Cloudflare 验证，未绕过；实际 REST JSON/XML 接口已能访问。没有从文档页面确认统一速率上限，因此 1 请求/秒是本项目自限速，不冒称官方配额。后续实际官方限额或响应要求更严时优先遵从。
+2026-10-15 核查：版权页面明确区分可访问与可再利用，自动全文获取应使用其 REST/OAI/批量等指定服务，并逐篇遵循许可。主站 API 文档网页在本环境遇到 Cloudflare 验证，未绕过；随后通过版权页面的官方开发站链接读取了 REST 文档，确认 JSON/XML、core 元数据、检索和排序约定；实际 REST JSON/XML 接口已能访问。没有从文档页面确认统一速率上限，因此 1 请求/秒是本项目自限速，不冒称官方配额。后续实际官方限额或响应要求更严时优先遵从。
 
 API 的使用允许与论文的版权不是同一件事。检索元数据不代表论文能翻译、重绘或再分发。按需取一篇全文，不对主网站页面做系统爬取。
+
+官方 API 页面还要求阅读 [Europe PMC 隐私说明](https://dev.europepmc.org/doc/Privacy%20Notice%20Europe%20PMC%20Website.pdf)。检索词与调用方 IP 会经过上游服务，不能把“本地不落盘”误解为从未向数据源发送。页面提示只使用可公开的课题/关键词；不将私人或未发表研究用于示例或验收。
 
 ## 许可门禁
 
